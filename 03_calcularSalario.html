@@ -15,9 +15,27 @@
     */
 
     // Entrada
-    
+    const salario = Number(prompt('Informe o seu salário.').trim().replace(",","."));
     // Processamento
-
+    if(salario<=2000){
+        const reajuste15 = salario*0.15;
+        alert(`Seu salário ficará R$${(reajuste15+salario).toFixed(2).replace(".",",")}`);
+    }
+    else if(salario>2000 && salario<=4000){
+        const reajuste10 = salario*0.10;
+        alert(`Seu salário ficará R$${(reajuste10+salario).toFixed(2).replace(".",",")}`);
+    }
+    else if(salario>4000 && salario<=7000){
+        const reajuste7 = (salario*7.5)/100;
+        alert(`Seu salário ficará R$${(reajuste7+salario).toFixed(2).replace(".",",")}`);
+    }
+    else if(salario>7000){
+        const reajuste5 = salario*0.05;
+        alert(`Seu salário ficará R$${(reajuste5+salario).toFixed(2).replace(".",",")}`);
+    }
+    else{
+        alert(`Comando ou valor inválido!`);
+    }
     // Saída
 
 </script>
