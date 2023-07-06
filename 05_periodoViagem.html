@@ -11,9 +11,22 @@
     */
 
     // Entrada
-    
+    const distancia = Number(prompt(`Insira a distância da viagem em quilômetros`).trim().replace(",","."));
+    const kmDia = Number(prompt(`Insira quantos quilômetros você pretende viajar por dia`).trim().replace(",","."));
+    const dias = distancia/kmDia;
     // Processamento
-
+    if(dias<=3){
+        alert(`A viagem poderá ser realizada em qualquer período! Dia(s) de duração da viagem: ${dias}`);
+    }
+    else if (dias<=10){
+        alert(`A viagem poderá ser realizada nas férias de julho! Dias de duração da viagem: ${dias}`);
+    }
+    else if (dias<=20){
+        alert(`A viagem poderá ser realizada nas férias de verão! Dias de duração da viagem: ${dias}`);
+    }
+    else{
+        alert(`Deverá trabalhar remoto! Dias de duração da viagem: ${dias}`);
+    }
     // Saída
 
 </script>
