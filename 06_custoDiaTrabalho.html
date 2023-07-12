@@ -15,9 +15,14 @@
     */
 
     // Entrada
-    
+    const viagens = Number(prompt(`Informe quantas viagens foram realizadas por dia.`).trim());
+    const cargo = prompt(`Informe qual cargo você ocupa.`).trim().toLowerCase();
     // Processamento
-
+    if(cargo == 'motorista'){
+        if(viagens<=10){
+            alert(`Cargo: ${cargo}. Valor total da viagem: R$${(viagens*100)*0.20}`);
+        }
+    }
     // Saída
 
 </script>
