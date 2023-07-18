@@ -12,9 +12,24 @@
     */
 
     // Entrada
-    
+    const valor = Number(prompt(`Insira o valor do computador`).trim().replace(",", "."));
+    const pagamento = prompt(`Qual será a forma de pagamento? Responda com B-Boleto, D-Dinheiro ou P-Pix`).trim().toLowerCase();
     // Processamento
-
+    if (pagamento == 'b') {
+        const desconto3 = valor * 0.03;
+        alert(`O valor fica R$${(valor - desconto3).toFixed(2).replace(".", ",")}`);
+    }
+    else if (pagamento == 'd') {
+        const desconto5 = valor * 0.05;
+        alert(`O valor fica R$${(valor - desconto5).toFixed(2).replace(".", ",")}`);
+    }
+    else if (pagamento == 'p') {
+        const desconto10 = valor * 0.1;
+        alert(`O valor fica R$${(valor - desconto10).toFixed(2).replace(".", ",")}`);
+    }
+    else{
+        alert(`Valor inválido!`)
+    }
     // Saída
 
 </script>

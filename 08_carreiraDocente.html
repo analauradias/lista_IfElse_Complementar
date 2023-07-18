@@ -19,9 +19,30 @@
     */
 
     // Entrada
-    
+    const carreira = Number(prompt(`Insira quantos anos de carreira você tem.`).trim());
+    const pesquisa = Number(prompt(`Insira quantos Projetos de Pesquisa você já coordenou`).trim());
+    const extensao = Number(prompt(`Insira quantos Projetos de Extensão você já orientou`).trim());
+    const tcc = Number(prompt(`Insira quantos TCCs você já orientou`).trim());
     // Processamento
+    const pontosCarreira = carreira*2.5;
+    const pontosPesquisa = pesquisa*5;
+    const pontosExtensao = extensao*5;
+    const pontosTCC = tcc*3; 
 
+    const total = (pontosCarreira)+(pontosPesquisa)+(pontosExtensao)+(pontosTCC);
+
+    if(total<=30){
+        alert(`Convidado!`);
+    }
+    else if(total<=50){
+        alert(`Agregado!`);
+    }
+    else if(total>50){
+        alert(`Titular!`);
+    }
+    else{
+        alert(`valor inválido!`);
+    }
     // Saída
 
 </script>

@@ -12,9 +12,27 @@
     */
 
     // Entrada
-    
+    const transporteSP = Number(prompt(`Insira o preço do transporte aéreo para ir a São Paulo`).trim().replace(",","."));
+    const transporteRJ = Number(prompt(`Insira o preço do transporte aéreo para ir ao Rio de Janeiro`).trim().replace(",","."));
+    const hotelSP = Number(prompt(`Insira o valor da diária do hotel de São Paulo`).trim().replace(",","."));
+    const hotelRJ = Number(prompt(`Insira o valor da diária do hotel do Rio de Janeiro`).trim().replace(",","."));
+    const dias = Number(prompt(`Insira quantos dias pretende ficar no destino`).trim().replace(",","."));
     // Processamento
+    const diariaSP = hotelSP*dias;
+    const viagemSP = transporteSP+diariaSP;
 
+    const diariaRJ = hotelRJ*dias;
+    const viagemRJ = transporteRJ+diariaRJ;
+
+    if(viagemSP<viagemRJ){
+        alert(`O melhor destino é São Paulo. Custo total: R$${viagemSP.toFixed(2).replace(".",",")}`);
+    }
+    else if(viagemRJ<viagemSP){
+        alert(`O melhor destino é Rio de janeiro. Custo total: R$${viagemRJ.toFixed(2).replace(".",",")}`);
+    }
+    else{
+        alert(`Valor inválido!`)
+    }
     // Saída
 
 </script>
