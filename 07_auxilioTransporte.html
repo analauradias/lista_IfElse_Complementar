@@ -12,9 +12,14 @@
     */
 
     // Entrada
-    
+    const salario = Number(prompt(`Insira quanto você recebe por mês`).trim().replace(",","."));
+    const auxilio = prompt(`Você deseja receber auxilio transporte? Responda com SIM ou NÃO`).trim().toLowerCase();
+    const veiculo = prompt(`Você utiliza veículo próprio para se locomover ao trabalho? Responda com SIM ou NÃO`).trim().toLowerCase();
     // Processamento
-
+    if(auxilio == 'sim' || veiculo == 'sim'){
+        const desconto6 = salario*0.06;
+        alert(`Seu salário ficará ${(salario-desconto6).replace(".",",")}`);
+    }
     // Saída
 
 </script>
