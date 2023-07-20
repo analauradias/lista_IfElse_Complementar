@@ -15,14 +15,40 @@
     */
 
     // Entrada
-    const viagens = Number(prompt(`Informe quantas viagens foram realizadas por dia.`).trim());
-    const cargo = prompt(`Informe qual cargo você ocupa.`).trim().toLowerCase();
+
+    const viagens = Number(prompt(`Insira quantas viagens foram realizadas por dia.`).trim());
+    const cargo = prompt(`Insira qual cargo você ocupa.`).trim().toLowerCase();
+
     // Processamento
-    if(cargo == 'motorista'){
-        if(viagens<=10){
-            alert(`Cargo: ${cargo}. Valor total da viagem: R$${(viagens*100)*0.20}`);
+
+    let mensagemFinal = ""
+    
+    if (cargo === 'motorista') {
+        mensagemFinal = mensagemFinal + `Motorista.`
+        if (viagens < 10 && viagens > 0) {
+            const total1 = 100 * 1.20;
+            mensagemFinal = mensagemFinal + ` Diária: R$ ${total1.toFixed(2).replace(".", ",")}.`;
+        }
+        else if (viagens > 10) {
+            const total2 = 100 * 1.35;
+            mensagemFinal = mensagemFinal + ` Diária: R$ ${total2.toFixed(2).replace(".", ",")}.`;
         }
     }
+    else if (cargo === 'cobrador') {
+        mensagemFinal = mensagemFinal + `Cobrador.`
+        if (viagem < 10 && viagens > 0) {
+            mensagemFinal = mensagemFinal + ` Diária: R$ 100,00.`;
+        }
+        else if (viagens > 10) {
+            const total3 = 100 * 1.10;
+            mensagemFinal = mensagemFinal + ` Diária: R$ ${total3.toFixed(2).replace(".", ",")}.`;
+        }
+    }
+    else{
+        mensagemFinal = mensagemFinal + `Valor Inválido!`
+    }
+    alert(mensagemFinal);
+
     // Saída
 
 </script>
